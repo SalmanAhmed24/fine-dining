@@ -1,6 +1,41 @@
-node_modules
-.next
-out
-next-env.d.ts
-*.tsbuildinfo
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Next.js Build and Cache
+/.next/
+/out/
+/build
+
+# Local Environment Variables (Do NOT commit sensitive keys)
 .env*.local
+.env
+.env.development
+.env.production
+
+# Testing & Coverage
+/coverage
+/test-results/
+/playwright-report/
+
+# TypeScript Auto-Generated Files
+*.tsbuildinfo
+next-env.d.ts
+
+# Production / Vercel Deployments
+.vercel
+
+# Debugging and Package Manager Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+pnpm-lock.yaml
+yarn.lock
+
+# IDE and System Files
+.DS_Store
+.vscode/
+.idea/
+*.pem
