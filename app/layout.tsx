@@ -20,8 +20,7 @@ const display = localFont({
 const body = localFont({
   src: [{ path: "./fonts/hanken-grotesk-latin-wght-normal.woff2", weight: "100 900", style: "normal" }],
   variable: "--font-body",
-  // "optional" avoids a late font swap re-rendering the hero copy (an LCP hit).
-  display: "optional",
+  display: "swap",
   fallback: ["system-ui", "sans-serif"],
 });
 
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
     siteName: site.name,
-    images: [{ url: "/images/hero.jpg", width: 2400, height: 1400, alt: "Plates on a dark stone table" }],
+    images: [{ url: "/images/hero.jpg", width: 2816, height: 990, alt: "Beef tenderloin and red wine on a table in the dining room" }],
     locale: "en_US",
     type: "website",
   },

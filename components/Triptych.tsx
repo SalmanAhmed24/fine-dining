@@ -31,10 +31,10 @@ export default function Triptych() {
         gsap.utils.toArray<HTMLElement>(".trip__img").forEach((img, i) => {
           gsap.fromTo(
             img,
-            { yPercent: -8, scale: 1.18 },
+            { yPercent: -4, scale: 1.1 },
             {
-              yPercent: 8,
-              scale: 1.1,
+              yPercent: 4,
+              scale: 1.06,
               ease: "none",
               scrollTrigger: { trigger: root.current, start: "top bottom", end: "bottom top", scrub: true },
             }
@@ -64,8 +64,8 @@ export default function Triptych() {
                   src={d.src}
                   alt={d.alt}
                   fill
-                  sizes="(max-width: 700px) 33vw, 30vw"
-                  quality={60}
+                  sizes="(max-width: 560px) 56vw, 36vw"
+                  quality={85}
                   className="cover trip__img"
                 />
                 <div className="trip__word" aria-hidden="true">

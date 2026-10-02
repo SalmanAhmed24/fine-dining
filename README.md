@@ -15,7 +15,13 @@ Requires Node 20.9+.
 ## Make it yours
 
 - **Copy, hours, address, menu, prices:** `lib/content.ts`
-- **Photos:** `/public/images` holds blurry generated stand-ins. Replace them with real photography using the same file names (landscape for `hero.jpg` and `hearth.jpg`, portrait 4:5 for the rest). next/image serves AVIF/WebP automatically.
+- **Photos:** `/public/images` holds crops of your five supplied photos, upscaled 4× with Real-ESRGAN (x4plus). The hero has a separate portrait crop (`hero-mobile.jpg`) served to tall screens through `<picture>`, so phones get a properly sized image instead of a stretched slice of the wide one. To swap in new photography, keep the file names and aspect ratios:
+  - `hero.jpg` — wide landscape, 3840 px wide; `hero-mobile.jpg` — 9:16 portrait, 1100 px+ wide
+  - `table-wide.jpg` — 21:10, 2000 px+ wide
+  - `detail-*.jpg`, `course-*.jpg` — 4:5 portrait, 1000 px+ tall
+  - `counter.jpg`, `pass.jpg` — 9:10, 1200 px+ tall
+  - `gallery-*.jpg` — square, 1000 px+
+  next/image serves AVIF/WebP at quality 85. If you replace a file while `next start` is running, delete `.next/cache/images` so the old optimized version isn't served.
 - **Domain:** set `site.url` in `lib/content.ts` (used for canonical URL, sitemap, Open Graph and JSON-LD).
 - **Bookings:** the form in `components/Reserve.tsx` simulates sending. Swap the `setTimeout` in `onSubmit` for your booking provider or a server action.
 - **Colours and type scale:** CSS variables at the top of `app/globals.css`.

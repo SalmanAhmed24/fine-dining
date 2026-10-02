@@ -195,9 +195,13 @@ body::after {
 }
 .hero__media { position: absolute; inset: 0; overflow: hidden; }
 .hero__media-inner { position: absolute; inset: -6% 0; }
+.hero__media-inner picture, .hero__img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero__img { object-fit: cover; object-position: 52% 55%; }
+@media (max-aspect-ratio: 4/5) { .hero__img { object-position: 50% 55%; } }
 .hero__scrim {
   position: absolute; inset: 0;
   background:
+    linear-gradient(90deg, rgba(16,32,27,.7) 0%, rgba(16,32,27,.25) 45%, rgba(16,32,27,0) 65%),
     linear-gradient(180deg, rgba(16,32,27,.55) 0%, rgba(16,32,27,0) 26%),
     linear-gradient(0deg, rgba(16,32,27,.92) 0%, rgba(16,32,27,.35) 42%, rgba(16,32,27,0) 70%);
 }
@@ -238,7 +242,7 @@ body::after {
 /* ───────────────────────── Triptych ───────────────────────── */
 .trip { padding-inline: var(--gutter); max-width: var(--max); margin-inline: auto; padding-bottom: clamp(5rem, 10vw, 8rem); }
 .trip__grid { --gap: clamp(0.5rem, 1.6vw, 1.25rem); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
-.trip__card { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius); background: var(--moss); }
+.trip__card { position: relative; isolation: isolate; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius); background: var(--moss); }
 .trip__img { }
 /* Each copy is the full width of the row, shifted left by its column. */
 .trip__word {
@@ -250,8 +254,10 @@ body::after {
 .trip__word-inner {
   font-family: var(--font-display-stack); font-style: italic; font-weight: 400;
   font-size: clamp(4rem, 19vw, 19rem); line-height: 1; letter-spacing: -0.04em;
-  color: var(--oyster); white-space: nowrap;
-  text-shadow: 0 0.04em 0.3em rgba(0,0,0,.25);
+  /* The photos are pale linen and cream plates, so the word is set dark. */
+  color: var(--forest); white-space: nowrap;
+  text-shadow: 0 0 0.25em rgba(236, 230, 218, 0.35);
+
 }
 .trip figcaption { text-align: center; margin-top: 1rem; font-size: var(--step--1); color: var(--sage); }
 @media (max-width: 560px) { .trip__card { aspect-ratio: 3 / 5; } .trip figcaption { font-size: 0.75rem; line-height: 1.35; } }
@@ -303,7 +309,7 @@ body::after {
 }
 .course { flex: 0 0 clamp(260px, 28vw, 440px); }
 .course__frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius); background: var(--forest); }
-.course__img { scale: 1.25; }
+.course__img { scale: 1.12; }
 .course__meta { display: grid; grid-template-columns: auto 1fr; gap: 1rem; margin-top: 1.1rem; }
 .course__num { font-family: var(--font-display-stack); font-style: italic; color: var(--brass); font-size: var(--step-1); line-height: 1.2; }
 .course__name { font-family: var(--font-display-stack); font-weight: 400; font-size: var(--step-2); line-height: 1.1; margin-bottom: 0.3rem; }

@@ -95,7 +95,7 @@ export default function Reserve() {
                   alt={tasting.gallery[photo].alt}
                   fill
                   sizes="(max-width: 900px) 100vw, 40vw"
-                  quality={75}
+                  quality={85}
                   className="cover"
                 />
               </m.div>
@@ -111,7 +111,7 @@ export default function Reserve() {
                 aria-label={`Show photo ${i + 1}: ${g.alt}`}
                 onClick={() => setPhoto(i)}
               >
-                <Image src={g.src} alt="" fill sizes="96px" quality={60} className="cover" />
+                <Image src={g.src} alt="" fill sizes="96px" quality={75} className="cover" />
               </button>
             ))}
           </div>

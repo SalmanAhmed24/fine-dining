@@ -45,11 +45,11 @@ export default function Room() {
         <article className="room__feature">
           <div className="room__media">
             <Image
-              src="/images/signature.jpg"
+              src="/images/counter.jpg"
               alt=""
               fill
-              sizes="(max-width: 800px) 100vw, 48vw"
-              quality={60}
+              sizes="(max-width: 800px) 100vw, 56vw"
+              quality={85}
               className="cover room__parallax"
             />
           </div>
@@ -68,10 +68,10 @@ export default function Room() {
           <div className="room__media">
             <Image
               src="/images/pass.jpg"
-              alt="Two copper-handled pans resting at the pass"
+              alt="Beef tenderloin and a glass of red wine at a window table"
               fill
-              sizes="(max-width: 800px) 100vw, 48vw"
-              quality={60}
+              sizes="(max-width: 800px) 100vw, 56vw"
+              quality={85}
               className="cover room__parallax"
             />
           </div>
@@ -80,11 +80,11 @@ export default function Room() {
         <figure className="room__wide">
           <div className="room__media">
             <Image
-              src="/images/hearth.jpg"
-              alt="A shallow copper pan of roasted vegetables on the stone counter"
+              src="/images/table-wide.jpg"
+              alt="Red wine, folded linen and cutlery on a table in the dining room"
               fill
               sizes="100vw"
-              quality={60}
+              quality={85}
               className="cover room__parallax"
             />
           </div>

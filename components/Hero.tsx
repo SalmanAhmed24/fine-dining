@@ -1,10 +1,24 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { gsap, useGSAP, MOTION_OK } from "@/lib/gsap";
 import SplitChars from "./SplitChars";
 import Magnetic from "./Magnetic";
+
+const HERO_ALT = "Beef tenderloin with pomme purée and red wine on a table in the dining room";
+
+const {
+  props: { srcSet: wide },
+} = getImageProps({ src: "/images/hero.jpg", alt: HERO_ALT, width: 3840, height: 1350, quality: 85, sizes: "100vw" });
+const { props: tall } = getImageProps({
+  src: "/images/hero-mobile.jpg",
+  alt: HERO_ALT,
+  width: 1114,
+  height: 1980,
+  quality: 85,
+  sizes: "100vw",
+});
 
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -39,16 +53,12 @@ export default function Hero() {
     <section ref={root} className="hero" id="top" aria-labelledby="hero-title">
       <div className="hero__media">
         <div className="hero__media-inner">
-          <Image
-            src="/images/hero.jpg"
-            alt="Copper pans and plated dishes on a dark stone table"
-            fill
-            priority
-            fetchPriority="high"
-            quality={75}
-            sizes="100vw"
-            className="cover"
-          />
+          {/* Art direction: a portrait crop for tall screens so the photo is
+              never stretched past its real resolution on phones. */}
+          <picture>
+            <source media="(min-aspect-ratio: 4/5)" srcSet={wide} sizes="100vw" />
+            <img {...tall} alt={HERO_ALT} className="hero__img" fetchPriority="high" loading="eager" decoding="async" />
+          </picture>
         </div>
         <div className="hero__scrim" aria-hidden="true" />
       </div>
@@ -59,7 +69,7 @@ export default function Hero() {
           <SplitChars text="Embers" className="hero__line hero__line--2" />
         </h1>
         <div className="hero__aside">
-          <p>A 24-seat tasting room. Every course is cooked over oak and finished in copper.</p>
+          <p>A 24-seat tasting room. Meat and seafood are cooked over oak, and every plate is finished by hand.</p>
           <Magnetic href="#reserve" variant="solid">
             Book a table
           </Magnetic>

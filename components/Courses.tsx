@@ -42,9 +42,9 @@ export default function Courses() {
         gsap.utils.toArray<HTMLElement>(".course__img").forEach((img) => {
           gsap.fromTo(
             img,
-            { xPercent: -10 },
+            { xPercent: -5 },
             {
-              xPercent: 10,
+              xPercent: 5,
               ease: "none",
               scrollTrigger: {
                 trigger: img.closest(".course"),
@@ -73,7 +73,7 @@ export default function Courses() {
         {courses.map((c, i) => (
           <li key={c.name} className="course">
             <div className="course__frame">
-              <Image src={c.src} alt={c.alt} fill sizes="(max-width: 900px) 78vw, 30vw" quality={60} className="cover course__img" />
+              <Image src={c.src} alt={c.alt} fill sizes="(max-width: 900px) 80vw, 38vw" quality={85} className="cover course__img" />
             </div>
             <div className="course__meta">
               <span className="course__num" aria-hidden="true">

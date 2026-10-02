@@ -23,41 +23,41 @@ export const nav = [
 ];
 
 export const details = [
-  { src: "/images/detail-1.jpg", alt: "Duck breast resting in a copper-handled pan", caption: "Oak-fired hearth" },
-  { src: "/images/detail-2.jpg", alt: "Brioche with cultured butter on stoneware", caption: "Stoneware thrown nearby" },
-  { src: "/images/detail-3.jpg", alt: "Spring greens finished with herb oil", caption: "Finished in copper at the pass" },
+  { src: "/images/detail-1.jpg", alt: "Seared scallops with crisp pancetta and herb oil", caption: "Seared to order" },
+  { src: "/images/detail-2.jpg", alt: "Sliced duck breast with cherry jus and hazelnuts", caption: "Aged in-house" },
+  { src: "/images/detail-3.jpg", alt: "Berry pavlova with vanilla cream and mint", caption: "Finished by hand" },
 ];
 
 export const courses = [
   {
-    name: "Garden ash",
-    note: "Charred leek, buttermilk, smoked trout roe",
+    name: "Seared scallops",
+    note: "Hand-dived scallops, cauliflower purée, crisp pancetta, herb oil",
     src: "/images/course-1.jpg",
-    alt: "Charred leek with buttermilk and trout roe",
+    alt: "Three seared scallops on cauliflower purée with pancetta and herb oil",
   },
   {
-    name: "Ember beet",
-    note: "Beetroot baked in coals, blackcurrant, aged sheep's cheese",
+    name: "Lobster tail",
+    note: "Butter-poached lobster, saffron risotto, asparagus, beurre blanc",
     src: "/images/course-2.jpg",
-    alt: "Coal-baked beetroot with blackcurrant",
+    alt: "Butter-poached lobster tail on saffron risotto with asparagus",
   },
   {
-    name: "Hearth bread",
-    note: "Sourdough from the oven's last heat, brown butter, honeycomb",
+    name: "Duck breast",
+    note: "Dry-aged duck, celeriac purée, green beans, toasted hazelnuts, cherry jus",
     src: "/images/course-3.jpg",
-    alt: "Sourdough with brown butter and honeycomb",
+    alt: "Sliced duck breast with green beans, hazelnuts and cherry jus",
   },
   {
-    name: "Copper duck",
-    note: "Dry-aged duck, cherry jus, roasted chicory",
+    name: "Beef tenderloin",
+    note: "Oak-grilled fillet, pomme purée, wild mushrooms, red wine jus",
     src: "/images/course-4.jpg",
-    alt: "Dry-aged duck with cherry jus",
+    alt: "Beef tenderloin with pomme purée, mushrooms and asparagus",
   },
   {
-    name: "Last embers",
-    note: "Burnt honey custard, pear cooked overnight in the ash",
+    name: "Berry pavlova",
+    note: "Crisp meringue, vanilla cream, summer berries, mint",
     src: "/images/course-5.jpg",
-    alt: "Burnt honey custard with ash-cooked pear",
+    alt: "Pavlova topped with cream, raspberries, blueberries and blackberries",
   },
 ];
 
@@ -86,8 +86,8 @@ export const tasting = {
     },
   ],
   gallery: [
-    { src: "/images/table.jpg", alt: "The dining room table set for four" },
-    { src: "/images/signature.jpg", alt: "A finished plate under warm light" },
-    { src: "/images/pass.jpg", alt: "Plates waiting at the pass" },
+    { src: "/images/gallery-lobster.jpg", alt: "Lobster tail on saffron risotto with asparagus" },
+    { src: "/images/gallery-duck.jpg", alt: "Duck breast with cherry jus on a cream plate" },
+    { src: "/images/gallery-pavlova.jpg", alt: "Berry pavlova on a glass plate" },
   ],
 };
