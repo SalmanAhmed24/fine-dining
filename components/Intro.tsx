@@ -48,7 +48,7 @@ export default function Intro() {
           within an hour of the kitchen, meat is aged in-house, and the menu changes when the produce does —
           usually every five or six weeks.
         </p>
-        <Magnetic href="#courses" variant="ghost">
+        <Magnetic href="/courses" variant="ghost">
           See the courses
         </Magnetic>
       </div>

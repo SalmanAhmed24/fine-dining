@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { site } from "@/lib/content";
+import Link from "next/link";
+import { nav, site } from "@/lib/content";
 import { gsap, useGSAP, MOTION_OK } from "@/lib/gsap";
 import SplitChars from "./SplitChars";
 
@@ -28,6 +29,15 @@ export default function Footer() {
   return (
     <footer ref={root} className="footer">
       <div className="footer__cols">
+        <nav aria-label="Footer">
+          <h2 className="footer__h">Explore</h2>
+          <Link href="/">Home</Link>
+          {nav.map((n) => (
+            <Link key={n.href} href={n.href}>
+              {n.label}
+            </Link>
+          ))}
+        </nav>
         <div>
           <h2 className="footer__h">Find us</h2>
           <address>

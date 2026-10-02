@@ -1,5 +1,5 @@
-// All copy and imagery lives here. Swap the stand-in images in /public/images
-// for real photography (keep the same file names, or update the paths below).
+// All copy and imagery lives here. The text on the About, Courses and Contact
+// pages is placeholder copy: replace it with your own before launch.
 
 export const site = {
   name: "Verdigris",
@@ -17,10 +17,13 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Menu", href: "#menu" },
-  { label: "The room", href: "#room" },
-  { label: "Courses", href: "#courses" },
+  { label: "About", href: "/about" },
+  { label: "Courses", href: "/courses" },
+  { label: "Contact", href: "/contact" },
 ];
+
+/** Where "Book a table" goes from pages that don't have the booking form. */
+export const bookingHref = "/contact#reserve";
 
 export const details = [
   { src: "/images/detail-1.jpg", alt: "Seared scallops with crisp pancetta and herb oil", caption: "Seared to order" },
@@ -89,5 +92,77 @@ export const tasting = {
     { src: "/images/gallery-lobster.jpg", alt: "Lobster tail on saffron risotto with asparagus" },
     { src: "/images/gallery-duck.jpg", alt: "Duck breast with cherry jus on a cream plate" },
     { src: "/images/gallery-pavlova.jpg", alt: "Berry pavlova on a glass plate" },
+  ],
+};
+
+/* ───────────────────────── Courses page ───────────────────────── */
+
+export const fullMenu = [
+  { name: "Oyster & ember", note: "Rock oyster warmed over coals, cucumber, dill oil", wine: "Muscadet, Loire 2022", surprise: true },
+  { name: courses[0].name, note: courses[0].note, wine: "Chablis Premier Cru 2021", src: courses[0].src },
+  { name: courses[1].name, note: courses[1].note, wine: "White Burgundy, Meursault 2020", src: courses[1].src },
+  { name: courses[2].name, note: courses[2].note, wine: "Pinot Noir, Central Otago 2019", src: courses[2].src },
+  { name: courses[3].name, note: courses[3].note, wine: "Syrah, Northern Rhône 2018", src: courses[3].src },
+  { name: "Between courses", note: "Buttermilk sorbet, green apple, sorrel", wine: "—", surprise: true },
+  { name: courses[4].name, note: courses[4].note, wine: "Late-harvest Riesling 2017", src: courses[4].src },
+];
+
+/* ───────────────────────── About page ───────────────────────── */
+
+export const about = {
+  story:
+    "We opened in a former foundry with one hearth, twelve chairs and a menu written on the back of a delivery note. Ten years later the hearth is the same.",
+  chef: {
+    name: "Mara Okafor",
+    role: "Chef and co-owner",
+    quote: "Fire is honest. You can't hide a bad ingredient from it, so we stopped buying them.",
+    bio: [
+      "Mara trained in Lyon and spent six years running the wood grill at a coastal restaurant before opening Verdigris with her partner, Theo, in 2016.",
+      "She still lights the hearth herself most days, and writes every menu around what the two farms we work with are pulling out of the ground that week.",
+    ],
+  },
+  values: [
+    { src: "/images/detail-1.jpg", alt: "Seared scallops with crisp pancetta", caption: "Two farms, one hour away" },
+    { src: "/images/detail-2.jpg", alt: "Sliced duck breast with cherry jus", caption: "Whole-animal butchery" },
+    { src: "/images/detail-3.jpg", alt: "Berry pavlova with vanilla cream", caption: "Nothing bought in" },
+  ],
+  milestones: [
+    { year: "2016", text: "Opened with twelve seats and a single oak-fired hearth." },
+    { year: "2018", text: "Doubled the room and built the eight-seat chef's counter." },
+    { year: "2021", text: "Started working exclusively with two farms in the valley." },
+    { year: "2024", text: "Opened the cellar and the private dining room downstairs." },
+    { year: "2026", text: "Ten years, still the same hearth, still lit at noon." },
+  ],
+};
+
+/* ───────────────────────── Contact page ───────────────────────── */
+
+export const contact = {
+  directions: [
+    { label: "By train", text: "Mill Quarter station is a six-minute walk. Leave by the north exit and follow Foundry Lane." },
+    { label: "By car", text: "Paid parking on Canal Street, two minutes away. We can't reserve spaces." },
+    { label: "Access", text: "Step-free entrance and an accessible restroom on the ground floor." },
+  ],
+  faqs: [
+    {
+      q: "Is there a dress code?",
+      a: "No. Come as you are. Most guests dress for a nice evening out, but nobody will be turned away for wearing jeans.",
+    },
+    {
+      q: "Can you cater for allergies?",
+      a: "Yes, with notice. Tell us about every allergy when you book. We can't cook entirely gluten-free from the hearth, and we'll be honest if we can't serve you safely.",
+    },
+    {
+      q: "Do you take walk-ins?",
+      a: "Sometimes, at the counter. Call after 4 pm on the day and we'll tell you if a seat is free.",
+    },
+    {
+      q: "What is your cancellation policy?",
+      a: "We hold tables with a card. Cancel at least 48 hours ahead and there's no charge; after that we charge half the menu price per guest.",
+    },
+    {
+      q: "Do you host private events?",
+      a: "Our downstairs room seats up to 16 for a private version of the tasting menu. Email us with your date and group size.",
+    },
   ],
 };

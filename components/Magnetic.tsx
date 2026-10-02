@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { m, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
-import { scrollToTarget } from "@/lib/scroll";
+import { useGo } from "@/lib/useGo";
 
 type Props = {
   children: React.ReactNode;
@@ -18,6 +18,7 @@ type Props = {
 export default function Magnetic({ children, href, onClick, type = "button", variant = "ghost", className = "", disabled }: Props) {
   const ref = useRef<HTMLElement | null>(null);
   const reduce = useReducedMotion();
+  const go = useGo();
   const x = useSpring(useMotionValue(0), { stiffness: 220, damping: 16, mass: 0.4 });
   const y = useSpring(useMotionValue(0), { stiffness: 220, damping: 16, mass: 0.4 });
 
@@ -51,9 +52,10 @@ export default function Magnetic({ children, href, onClick, type = "button", var
         onPointerLeave={leave}
         data-cursor="link"
         onClick={(e) => {
-          if (href.startsWith("#")) {
+          if (href.startsWith("#") || href.startsWith("/")) {
+            if (e.metaKey || e.ctrlKey || e.shiftKey) return;
             e.preventDefault();
-            scrollToTarget(href);
+            go(href);
           }
           onClick?.();
         }}

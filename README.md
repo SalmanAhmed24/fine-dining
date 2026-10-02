@@ -12,6 +12,17 @@ npm run build && npm start   # production (use this for Lighthouse)
 
 Requires Node 20.9+.
 
+## Pages
+
+| Route | File | Sections |
+|---|---|---|
+| `/` | `app/page.tsx` | Hero, intro, image row, statement, room, pinned courses, booking |
+| `/about` | `app/about/page.tsx` | Page hero, story, chef profile, values image row, milestones timeline, call to action |
+| `/courses` | `app/courses/page.tsx` | Page hero, full seven-course menu with hover photo previews, pinned course gallery, statement, call to action |
+| `/contact` | `app/contact/page.tsx` | Page hero, visit/hours/contact cards, directions, booking form, FAQ accordion |
+
+The About, Courses and Contact copy is placeholder text and lives in `lib/content.ts` (`about`, `fullMenu`, `contact`). "Book a table" scrolls to the form on Home and Contact, and links to `/contact#reserve` from other pages.
+
 ## Make it yours
 
 - **Copy, hours, address, menu, prices:** `lib/content.ts`

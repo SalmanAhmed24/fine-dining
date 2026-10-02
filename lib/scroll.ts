@@ -21,3 +21,22 @@ export function scrollToTarget(target: string | HTMLElement) {
   if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
   el.focus({ preventScroll: true });
 }
+
+export function scrollToTop(immediate = false) {
+  if (instance) instance.scrollTo(0, { immediate, duration: 1.4 });
+  else window.scrollTo({ top: 0, behavior: immediate ? "auto" : "smooth" });
+}
+
+/** After a client-side navigation, jump to the hash target or the top. */
+export function resetScroll(hash: string) {
+  const el = hash ? document.getElementById(hash.slice(1)) : null;
+  if (instance) {
+    instance.resize();
+    if (el) instance.scrollTo(el, { immediate: true });
+    else instance.scrollTo(0, { immediate: true });
+  } else if (el) {
+    el.scrollIntoView();
+  } else {
+    window.scrollTo(0, 0);
+  }
+}

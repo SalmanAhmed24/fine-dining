@@ -1,11 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import { setLenis } from "@/lib/scroll";
+import { resetScroll, setLenis } from "@/lib/scroll";
 
 export default function SmoothScroll() {
+  const pathname = usePathname();
+  const first = useRef(true);
+
+  // On client-side navigation: reset scroll (or jump to #hash) once the new
+  // page has painted, then let ScrollTrigger re-measure everything.
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    const id = requestAnimationFrame(() => {
+      resetScroll(window.location.hash);
+      ScrollTrigger.refresh();
+    });
+    return () => cancelAnimationFrame(id);
+  }, [pathname]);
+
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reduce.matches) return;

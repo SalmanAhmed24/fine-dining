@@ -3,10 +3,10 @@
 import { useRef } from "react";
 import { gsap, useGSAP, MOTION_OK } from "@/lib/gsap";
 
-const TEXT =
+const DEFAULT_TEXT =
   "Lit at noon, fed with oak until close, and finished in copper pans that have been on this hearth since the day we opened.";
 
-export default function Statement() {
+export default function Statement({ text: TEXT = DEFAULT_TEXT, label = "Our hearth" }: { text?: string; label?: string }) {
   const root = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -30,7 +30,7 @@ export default function Statement() {
   );
 
   return (
-    <section ref={root} className="statement section" aria-label="Our hearth">
+    <section ref={root} className="statement section" aria-label={label}>
       <p className="statement__text">
         <span className="sr-only">{TEXT}</span>
         {TEXT.split(" ").map((w, i) => (

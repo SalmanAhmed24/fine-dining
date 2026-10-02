@@ -5,14 +5,18 @@ import Image from "next/image";
 import { details } from "@/lib/content";
 import { gsap, useGSAP, MOTION_OK } from "@/lib/gsap";
 
-const WORD = "Verdigris";
+type Item = { src: string; alt: string; caption: string };
 
 /**
  * Three image windows that share one giant word. Each window holds its own
  * copy of the word, offset so the three copies line up into one continuous
  * line. Scrolling slides the word through all three windows at once.
  */
-export default function Triptych() {
+export default function Triptych({
+  word: WORD = "Verdigris",
+  items = details,
+  label = "How we cook",
+}: { word?: string; items?: Item[]; label?: string }) {
   const root = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -54,9 +58,9 @@ export default function Triptych() {
   );
 
   return (
-    <section ref={root} className="trip" aria-label="How we cook">
+    <section ref={root} className="trip" aria-label={label}>
       <ul className="trip__grid">
-        {details.map((d, i) => (
+        {items.map((d, i) => (
           <li key={d.src} className="trip__item" style={{ "--i": i } as React.CSSProperties}>
             <figure>
               <div className="trip__card">
